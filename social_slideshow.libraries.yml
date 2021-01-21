@@ -1,0 +1,26 @@
+slideshow:
+  js:
+    js/social_slideshow.js: {}
+
+carousel:
+  css:
+    theme:
+      css/carousel.css: {}
+  js:
+    /libraries/bootstrap/js/carousel.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+
+section.slideshow:
+  css:
+    theme:
+      css/social_slideshow.section.hero.css: {}
+
+section.slideshow_wide:
+  css:
+    theme:
+      css/social_slideshow.wide.css: {}
+
+

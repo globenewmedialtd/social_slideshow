@@ -1,0 +1,75 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_slideshow_wide_item
+    - paragraphs.paragraphs_type.slideshow_wide
+    - paragraphs.paragraphs_type.slideshow_wide_item
+  module:
+    - entity_reference_revisions
+id: paragraph.slideshow.field_slideshow_wide_item
+field_name: field_slideshow_wide_item
+entity_type: paragraph
+bundle: slideshow_wide
+label: Item
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      slideshow_item: slideshow_wide_item
+    target_bundles_drag_drop:
+      slideshow_item:
+        enabled: true
+        weight: 15
+      accordion:
+        weight: 16
+        enabled: false
+      slideshow_wide:
+        weight: 16
+        enabled: false
+      accordion_item:
+        weight: 17
+        enabled: false
+      block:
+        weight: 18
+        enabled: false
+      button:
+        weight: 19
+        enabled: false
+      custom_content_list:
+        weight: 20
+        enabled: false
+      featured:
+        weight: 21
+        enabled: false
+      featured_item:
+        weight: 22
+        enabled: false
+      featured_items:
+        weight: 23
+        enabled: false
+      hero:
+        weight: 24
+        enabled: false
+      hero_small:
+        weight: 25
+        enabled: false
+      introduction:
+        weight: 26
+        enabled: false
+      section:
+        weight: 27
+        enabled: false
+      slideshow:
+        weight: 28
+        enabled: false
+      slideshow_wide_item:
+        weight: 32
+        enabled: false
+field_type: entity_reference_revisions

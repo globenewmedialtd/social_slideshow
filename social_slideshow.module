@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * @file
+ * The Social slideshow module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function social_slideshow_theme() {
+  // Paragraphs.
+  $theme_templates['paragraph__slideshow__default'] = [
+    'base hook' => 'paragraph',
+  ];
+  $theme_templates['paragraph__slideshow_item__default'] = [
+    'base hook' => 'paragraph',
+  ];
+  $theme_templates['paragraph__slideshow_wide__default'] = [
+    'base hook' => 'paragraph',
+  ];
+  $theme_templates['paragraph__slideshow_wide_item__default'] = [
+    'base hook' => 'paragraph',
+  ];
+  // Fields
+  $theme_templates['field__paragraph__field_slideshow_item'] = [
+    'base hook' => 'field',
+  ];
+  $theme_templates['field__paragraph__field_slideshow_item_image'] = [
+    'base hook' => 'field',
+  ];
+
+  return $theme_templates;
+}

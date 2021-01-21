@@ -1,0 +1,60 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.slideshow_wide.field_slideshow_wide_buttons
+    - field.field.paragraph.slideshow_wide.field_slideshow_wide_item
+    - field.field.paragraph.slideshow_wide.field_slideshow_wide_subtitle
+    - field.field.paragraph.slideshow_wide.field_slideshow_wide_title
+    - paragraphs.paragraphs_type.slideshow_wide
+  module:
+    - paragraphs
+id: paragraph.slideshow_wide.default
+targetEntityType: paragraph
+bundle: slideshow_wide
+mode: default
+content:
+  field_slideshow_wide_buttons:
+    type: entity_reference_paragraphs
+    weight: 2
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_slideshow_wide_item:
+    type: entity_reference_paragraphs
+    weight: 3
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_slideshow_wide_subtitle:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_slideshow_wide_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+

@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: slideshow_wide_item
+label: 'Slideshow Wide Item'
+icon_uuid: null
+icon_default: null
+description: 'Slideshow Item full width for the landing page'
+behavior_plugins: {  }
