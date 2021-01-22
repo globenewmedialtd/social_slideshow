@@ -70,24 +70,16 @@
     {% endfor %}
   </ol>
 
-
-
-      <div class="carousel-content">
-        <h1 class="page-title">{{ content.field_slideshow_title }}</h1>
-        <h3 class="page-subtitle">{{ content.field_slideshow_subtitle }}</h3>
-        {{ content|without('field_slideshow_item','field_slideshow_title','field_slideshow_subtitle') }}
-      </div> 
+  <div class="carousel-content">
+    <h1 class="page-title">{{ content.field_slideshow_title }}</h1>
+    <h3 class="page-subtitle">{{ content.field_slideshow_subtitle }}</h3>
+    {{ content|without('field_slideshow_item','field_slideshow_title','field_slideshow_subtitle') }}
+  </div> 
 
     <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">  
- 
-    {{ content.field_slideshow_item }}
+     {{ content.field_slideshow_item }}
   </div>
-      
-
-
-    
-    
 
     {% endblock %}
 </div>

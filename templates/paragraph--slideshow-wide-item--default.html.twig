@@ -39,27 +39,19 @@
  */
 #}
 
-{{ attach_library('social_landing_page/accordion')}}
+
 
 {%
   set classes = [
+    'item',
+    'cover-img',
+    'slideshow-cover',
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished'
   ]
 %}
-{% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
-    {% block content %}
 
-    <h1 class="card__title">{{ content.field_accord_title }}</h1>
-    <div class="card__text">
-      {{ content.field_accord_description }}
-    </div>
-
-    {{ content|without('field_accord_title', 'field_accord_description') }}
-
-    {% endblock %}
+  <div{{ attributes.addClass(classes) }} {% if hero_styled_image_url %} style="background-image: url('{{ hero_styled_image_url }}');" {% endif %}>
   </div>
-{% endblock paragraph %}

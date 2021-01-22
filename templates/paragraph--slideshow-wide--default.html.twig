@@ -39,10 +39,14 @@
  */
 #}
 
-{{ attach_library('social_slideshow/carousel')}}
+{{ attach_library('social_slideshow/slideshow')}} 
+{{ attach_library('social_slideshow/carousel')}} 
+{{ attach_library('social_slideshow/section.slideshow_wide')}}
 
 {%
   set classes = [
+    'carousel',
+    'slide',
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
@@ -53,12 +57,27 @@
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
 
-    <h1 class="card__title">{{ content.field_accord_title }}</h1>
-    <div class="card__text">
-      {{ content.field_accord_description }}
-    </div>
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+    {% for key, item in content.field_slideshow_wide_item if key|first != '#' %}
+      {% if loop.first %}
+        <li data-target="#{{ paragraph.id() }}" data-slide-to="{{ key }}" class="active"></li>
+      {% else %}
+        <li data-target="#{{ paragraph.id() }}" data-slide-to="{{ key }}"></li>
+      {% endif %}
+    {% endfor %}
+    </ol>
 
-    {{ content|without('field_accord_title', 'field_accord_description') }}
+    <div class="carousel-content">
+      <h1 class="page-title">{{ content.field_slideshow_wide_title }}</h1>
+      <h3 class="page-subtitle">{{ content.field_slideshow_wide_subtitle }}</h3>
+      {{ content|without('field_slideshow_wide_item','field_slideshow_wide_title','field_slideshow_wide_subtitle') }}
+    </div> 
+
+    <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">  
+     {{ content.field_slideshow_wide_item }}
+  </div>
 
     {% endblock %}
   </div>

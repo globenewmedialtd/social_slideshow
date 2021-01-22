@@ -1,8 +1,18 @@
 @media (min-width: 1200px) {
-  .paragraph--section .paragraph--slideshow-wide {
+  .paragraph--section .paragraph--type--slideshow-wide {
     margin-left: calc(-100vw / 2 + 1200px / 2);
     margin-right: calc(-100vw / 2 + 1200px / 2);
   }
+}
+
+.slideshow-cover {
+  min-height: 410px;
+}
+
+.cover-img {
+  background-size: cover;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
 }
 
 /*# sourceMappingURL=social_slideshow.section.slideshow_wide.css.map */
