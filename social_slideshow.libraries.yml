@@ -16,11 +16,11 @@ carousel:
 section.slideshow:
   css:
     theme:
-      css/social_slideshow.section.hero.css: {}
+      css/social_slideshow.section.css: {}
 
 section.slideshow_wide:
   css:
     theme:
-      css/social_slideshow.wide.css: {}
+      css/social_slideshow.section.wide.css: {}
 
 

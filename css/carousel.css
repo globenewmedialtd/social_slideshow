@@ -225,7 +225,7 @@
   .carousel-content {
     position: absolute;
     display: inline-block;
-    bottom: 40%;
+    bottom: 30%;
     left: 50%;
     z-index: 15;
     width: 60%;
@@ -233,5 +233,6 @@
     margin-left: -30%;
     text-align: center;
     list-style: none;
+    color: #ffffff;
   }
 }

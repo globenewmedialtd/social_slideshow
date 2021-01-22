@@ -40,6 +40,8 @@
 #}
 {{ attach_library('social_slideshow/slideshow')}} 
 {{ attach_library('social_slideshow/carousel')}} 
+{{ attach_library('social_slideshow/section.slideshow')}}
+
 
 
 {%
@@ -54,20 +56,26 @@
 %}
 {% block paragraph %}
 
-  <div{{ attributes.addClass(classes).setAttribute('data-ride', 'carousel').setAttribute('id', 'carousel-example-generic') }}>
+  <div{{ attributes.addClass(classes).setAttribute('data-ride', 'carousel').setAttribute('id', paragraph.id()) }}>
     {% block content %}
 
   <!-- Indicators -->
   <ol class="carousel-indicators">
-      {% for key, item in content.field_slideshow_item if key|first != '#' %}
-  <li data-target="#carousel-example-generic" data-slide-to="{{ key }}" class="active"></li>
-{% endfor %}
+    {% for key, item in content.field_slideshow_item if key|first != '#' %}
+      {% if loop.first %}
+        <li data-target="#{{ paragraph.id() }}" data-slide-to="{{ key }}" class="active"></li>
+      {% else %}
+        <li data-target="#{{ paragraph.id() }}" data-slide-to="{{ key }}"></li>
+      {% endif %}
+    {% endfor %}
   </ol>
 
 
 
       <div class="carousel-content">
-        {{ content|without('field_slideshow_item') }}
+        <h1 class="page-title">{{ content.field_slideshow_title }}</h1>
+        <h3 class="page-subtitle">{{ content.field_slideshow_subtitle }}</h3>
+        {{ content|without('field_slideshow_item','field_slideshow_title','field_slideshow_subtitle') }}
       </div> 
 
     <!-- Wrapper for slides -->

@@ -1,0 +1,11 @@
+.slideshow-cover {
+  min-height: 410px;
+}
+
+.cover-img {
+  background-size: cover;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+}
+
+/*# sourceMappingURL=social_slideshow.section.slideshow.css.map */

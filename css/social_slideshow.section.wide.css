@@ -1,0 +1,8 @@
+@media (min-width: 1200px) {
+  .paragraph--section .paragraph--slideshow-wide {
+    margin-left: calc(-100vw / 2 + 1200px / 2);
+    margin-right: calc(-100vw / 2 + 1200px / 2);
+  }
+}
+
+/*# sourceMappingURL=social_slideshow.section.slideshow_wide.css.map */

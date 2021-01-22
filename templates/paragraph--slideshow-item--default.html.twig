@@ -44,18 +44,16 @@
 {%
   set classes = [
     'item',
+    'cover-img',
+    'slideshow-cover',
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
     not paragraph.isPublished() ? 'paragraph--unpublished'
   ]
 %}
-{% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
-    {% block content %}
 
-    {{ content }}
-
-    {% endblock %}
+  <div{{ attributes.addClass(classes) }} {% if hero_styled_image_url %} style="background-image: url('{{ hero_styled_image_url }}');" {% endif %}>
   </div>
-{% endblock paragraph %}
+
+

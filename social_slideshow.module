@@ -5,6 +5,13 @@
  * The Social slideshow module.
  */
 
+use Drupal\Core\Template\Attribute;
+use Drupal\file\Entity\File;
+use Drupal\image\Entity\ImageStyle;
+use Drupal\paragraphs\Entity\Paragraph;
+
+
+
 /**
  * Implements hook_theme().
  */
@@ -29,6 +36,46 @@ function social_slideshow_theme() {
   $theme_templates['field__paragraph__field_slideshow_item_image'] = [
     'base hook' => 'field',
   ];
-
+  $theme_templates['field__paragraph__field_slideshow_title'] = [
+    'base hook' => 'field',
+  ];
+  $theme_templates['field__paragraph__field_slideshow_subtitle'] = [
+    'base hook' => 'field',
+  ];
   return $theme_templates;
+}
+
+/**
+ * Prepares variables for the paragraph.
+ */
+function social_slideshow_preprocess_paragraph(&$variables) {
+  /** @var \Drupal\paragraphs\Entity\Paragraph $entity */
+  $entity = $variables['elements']['#paragraph'];
+  $bundle = $entity->bundle();
+
+  switch ($bundle) {
+    case 'slideshow':
+      // Add variable
+      //kint($variables);
+      break;
+    case 'slideshow_item':
+      // Add the hero styled image.
+      $image_style = 'social_landing_hero';
+      $image_field = "field_{$bundle}_image";
+      if ($entity->hasField($image_field) && !empty($entity->{$image_field}->entity)) {
+        $variables['hero_styled_image_url'] = ImageStyle::load($image_style)
+          ->buildUrl($entity->{$image_field}->entity->getFileUri());
+      }
+      break;
+
+    case 'slideshow_wide_item':
+      // Add the hero styled image.
+      $image_style = 'social_landing_hero_small';
+      $image_field = "field_{$bundle}_image";
+      if ($entity->hasField($image_field) && !empty($entity->{$image_field}->entity)) {
+        $variables['hero_small_styled_image_url'] = ImageStyle::load($image_style)
+          ->buildUrl($entity->{$image_field}->entity->getFileUri());
+      }
+      break;
+  }
 }
