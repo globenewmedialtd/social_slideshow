@@ -33,6 +33,9 @@ function social_slideshow_theme() {
   $theme_templates['field__paragraph__field_slideshow_item'] = [
     'base hook' => 'field',
   ];
+  $theme_templates['field__paragraph__field_slideshow_wide_item'] = [
+    'base hook' => 'field',
+  ];
   $theme_templates['field__paragraph__field_slideshow_item_image'] = [
     'base hook' => 'field',
   ];
@@ -70,10 +73,10 @@ function social_slideshow_preprocess_paragraph(&$variables) {
 
     case 'slideshow_wide_item':
       // Add the hero styled image.
-      $image_style = 'social_landing_hero_small';
+      $image_style = 'social_landing_hero';
       $image_field = "field_{$bundle}_image";
       if ($entity->hasField($image_field) && !empty($entity->{$image_field}->entity)) {
-        $variables['hero_small_styled_image_url'] = ImageStyle::load($image_style)
+        $variables['hero_styled_image_url'] = ImageStyle::load($image_style)
           ->buildUrl($entity->{$image_field}->entity->getFileUri());
       }
       break;
