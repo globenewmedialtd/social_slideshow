@@ -25,7 +25,7 @@ settings:
       slideshow_item: slideshow_wide_item
     target_bundles_drag_drop:
       slideshow_item:
-        enabled: true
+        enabled: false
         weight: 15
       accordion:
         weight: 16
@@ -71,5 +71,5 @@ settings:
         enabled: false
       slideshow_wide_item:
         weight: 32
-        enabled: false
+        enabled: true
 field_type: entity_reference_revisions
