@@ -22,4 +22,11 @@
   background-repeat: no-repeat;
 }
 
+.hero-action-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 3;
+}
+
 /*# sourceMappingURL=social_slideshow.section.slideshow_wide.css.map */
