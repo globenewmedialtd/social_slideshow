@@ -3,12 +3,9 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.slideshow_item.field_slideshow_item_image
-    - image.style.medium
     - paragraphs.paragraphs_type.slideshow_item
   module:
-    - image_widget_crop
-_core:
-  default_config_hash: tCn6PeyRblN_NGKM5hp1n5E2AXMi9rqRroNK7-iuGRQ
+    - image
 id: paragraph.slideshow_item.default
 targetEntityType: paragraph
 bundle: slideshow_item
@@ -16,18 +13,10 @@ mode: default
 content:
   field_slideshow_item_image:
     weight: 0
-    settings:
-      show_default_crop: true
-      warn_multiple_usages: true
-      preview_image_style: medium
-      crop_preview_image_style: crop_thumbnail
-      crop_list:
-        - hero_landing
-      progress_indicator: throbber
-      crop_types_required: {  }
-      show_crop_area: false
+    settings:      
+      preview_image_style: thumbnail
     third_party_settings: {  }
-    type: image_widget_crop
+    type: image_image
     region: content
 hidden:
   created: true
