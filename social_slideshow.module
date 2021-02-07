@@ -62,6 +62,14 @@ function social_slideshow_preprocess_paragraph(&$variables) {
       //kint($variables);
       break;
     case 'slideshow_item':
+      // Get the parent paragraph
+      $paragraph = $variables['paragraph'];
+      $parent = $paragraph->getParentEntity();
+      // Define default height
+      $variables['slideshow_height'] = '410px';
+      if(isset($parent) && isset($parent->field_slideshow_height->value)) {
+        $variables['slideshow_height'] = $parent->field_slideshow_height->value . 'px';
+      }
       // Add the hero styled image.
       $image_style = 'social_landing_hero';
       $image_field = "field_{$bundle}_image";
@@ -72,6 +80,11 @@ function social_slideshow_preprocess_paragraph(&$variables) {
       break;
 
     case 'slideshow_wide_item':
+      // Define default height
+      $variables['slideshow_height'] = '410px';
+      if(isset($parent) && isset($parent->field_slideshow_height->value)) {
+        $variables['slideshow_height'] = $parent->field_slideshow_height->value .'px';
+      }
       // Add the hero styled image.
       $image_style = 'social_landing_hero';
       $image_field = "field_{$bundle}_image";

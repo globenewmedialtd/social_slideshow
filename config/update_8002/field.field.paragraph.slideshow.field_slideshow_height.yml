@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_slideshow_height
+    - paragraphs.paragraphs_type.slideshow
+id: paragraph.slideshow.field_slideshow_height
+field_name: field_slideshow_height
+entity_type: paragraph
+bundle: slideshow
+label: 'Slideshow Height'
+description: ''
+required: true
+translatable: true
+default_value:
+  -
+    value: 410
+default_value_callback: ''
+settings:
+  min: 320
+  max: 1000
+  prefix: ''
+  suffix: ''
+field_type: integer

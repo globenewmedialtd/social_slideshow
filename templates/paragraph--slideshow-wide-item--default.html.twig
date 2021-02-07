@@ -45,7 +45,6 @@
   set classes = [
     'item',
     'cover-img',
-    'slideshow-cover',
     'paragraph',
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
@@ -53,5 +52,5 @@
   ]
 %}
 
-  <div{{ attributes.addClass(classes) }} {% if hero_styled_image_url %} style="background-image: url('{{ hero_styled_image_url }}');" {% endif %}>
+  <div{{ attributes.addClass(classes) }} {% if hero_styled_image_url %} style="background-image: url('{{ hero_styled_image_url }}');min-height: {{ slideshow_height }};" {% endif %}>
   </div>
